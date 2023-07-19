@@ -25,13 +25,21 @@ function getSentence(arr,op) {
     const GAP = " ";
     const PUNCT = ".";  // Fall: S
     const QEST = "?";   // Fall: Q
-    const EXC = "!";    // Falol:E
-    if (op = S) {
-        arr.join(GAP) + PUNCT;
+    const EXC = "!";    // Fall: E
+    
+    switch (op) {
+            case "Q":
+             str = arr.join(GAP) + QEST;
+            break;
+            case "E":
+            str = arr.join(GAP) + EXC;
+            break;
+            default:
+            str = arr.join(GAP) + PUNCT;
+            break;
     }
-    switch
 
-    return arr;
+    return str;
 }
 
 
