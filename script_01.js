@@ -10,6 +10,7 @@
 // Parameter --> funktion getSentence([ ...], "Q"){ ...}
 
 // Aufgabe: Satzausgabe mit korrektem Satzzeichen
+const GAP = " "; 
 
 
 /*** Funktion mit Array als Parameter */
@@ -22,27 +23,26 @@ output(getSentence(["Ich","hätt","gern","die",
 "mache,","habbe","Sie","die"],"Q"));
 
 function getSentence(arr,op) {
-    const GAP = " ";
-    const PUNCT = ".";  // Fall: S
-    const QEST = "?";   // Fall: Q
-    const EXC = "!";    // Fall: E
-    
-    switch (op) {
-            case "Q":
-             str = arr.join(GAP) + QEST;
-            break;
-            case "E":
-            str = arr.join(GAP) + EXC;
-            break;
-            default:
-            str = arr.join(GAP) + PUNCT;
-            break;
-    }
+    str = arr.join(GAP) + getPunctuation(op)
 
     return str;
 }
 
+function getPunctuation(op){
+    switch (op) {
+        case "Q":
+        op = "?";
+        break;
+        case "E":
+        op = "!";
+        break;
+        default:
+        op = ".";
+        break;
+}
 
+return op;
+}
 
 // Modul: Ausgabe in Konsole : Test
 // output("hi"); 
